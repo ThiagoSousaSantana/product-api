@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+
+  cosmosdb:
+    image: mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest
+    ports:
+      - "8081:8081"
+      - "10250-10255:10250-10255"
+    tty: true
+    stdin_open: true
+
+  rabbitmq:
+    image: rabbitmq:3.9.12-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
